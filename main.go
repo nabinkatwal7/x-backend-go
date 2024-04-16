@@ -5,11 +5,13 @@ import (
 
 	"github.com/joho/godotenv"
 	"github.com/nabinkatwal7/x-backend-go/db"
+	"github.com/nabinkatwal7/x-backend-go/router"
 )
 
 func main() {
 	loadEnv()
 	loadDatabase()
+	router.ServeApplication()
 }
 
 func loadEnv() {
