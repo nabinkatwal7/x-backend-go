@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"github.com/gin-gonic/gin"
+	"github.com/nabinkatwal7/x-backend-go/controller"
 )
 
 func ServeApplication() {
@@ -21,7 +22,8 @@ func ServeApplication() {
 		})
 	})
 
-	// publicRoutes := router.Group("/auth")
+	publicRoutes := router.Group("/auth")
+	publicRoutes.POST("/register", controller.Register)
 
 	router.Run(":8080")
 	fmt.Println("Server started on port 8080")
